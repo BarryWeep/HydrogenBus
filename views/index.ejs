@@ -1,0 +1,692 @@
+
+<%- include('../views/partials/head'); %>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+<style>
+    #map { height: 600px; width: 100%;}
+</style>
+<%- include('../views/partials/header'); %>
+
+
+  <!-- Hero Section -->
+  <div class="overlay">
+    <section id="hero" class="hero">
+      <div class="container position-relative">
+        <div class="row gy-5" data-aos="fade-in">
+          <div class="col-lg-7 order-lg-1 d-flex flex-column align-items-start justify-content-center text-left caption">
+            <h2 style="font-weight:300;" class="circle" data-aos="fade-up">Hydrogen Bus Project</h2>
+            <h2 data-aos="fade-up">Premier Motor Service </h2>
+            <h3 data-aos="fade-up">Hydrogen Bus<span class="circle"> Driving The Future</span></h3>
+            <p data-aos="fade-up" data-aos-delay="400" style="color: black;">Change the way you travel today</p>
+            <div class="d-flex" data-aos="fade-up" data-aos-delay="600">
+              <a href="/BusTrackInterface" class="btn-get-started">Get Started</a>
+              <a href="../assets/images/HydrogenDay.mp4"  class="glightbox btn-watch-video d-flex align-items-center"><i
+                  class="bi bi-play-circle"></i><span>Watch Video</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- End Hero Section -->
+
+  <div id="services" class="section">
+    <div class="top-icon-box position-relative">
+      <div class="container position-relative">
+        <div class="section-header">
+          <div>
+            <h2>Why Choose Hydrogen Bus?</h2>
+            <p>environmentally friendly, efficient, and promising mode of transportation</p>
+          </div>
+          <div class="d-flex align-items-center">
+              <a href="/BusTrackInterface" class="fill-button">Test It</a>
+          </div>
+        </div>
+        <div class="row gy-4">
+
+          <div class="col-xl-4 col-md-4" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-x"></i></div>
+              <h4 class="title"><a href="" class="stretched-link">Zero Emissions</a></h4>
+              <p>The hydrogen bus is powered by hydrogen gas, which reacts with oxygen from the air to generate electricity. The chemical reaction that occurs produces zero emissions, as the only by-product of the reaction is water vapour. This helps to reduce air pollution and greenhouse gas emissions, which contribute to climate change. Premier Motor Group is committed to finding a much more energy efficient and sustainable way to provide services throughout the Illawarra and South Coast.</p>
+            </div>
+          </div>
+          <!--End Icon Box -->
+
+          <div class="col-xl-4 col-md-4" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-lightning"></i></div>
+              <h4 class="title"><a href="" class="stretched-link">High Energy Efficiency</a></h4>
+              <p>Hydrogen has a much higher density compared to conventional fuels such as diesel. This means that a smaller amount of hydrogen can store and release a larger amount of energy. The hydrogen powered bus utilises a direct conversion to electricity to power the motor. Compared to traditional internal combustion engines, this reduces the amount of energy conversion steps and does not result in the loss of energy. The hydrogen bus also possesses regenerative technology, this means that unused kinetic energy is converted into electricity that is stored in the vehicle’s fuel cell, which can then be used to power the vehicle, reducing the overall energy consumption.</p>
+            </div>
+          </div>
+          <!--End Icon Box -->
+
+          <div class="col-xl-4 col-md-4" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-lightbulb"></i></div>
+              <h4 class="title"><a href="" class="stretched-link">Fast Refueling</a></h4>
+              <p>Australia currently has fewer than 10 hydrogen refuelling stations. Luckily, one of these stations is located within the Illawarra. With access to this station, the hydrogen bus will be refuelled on a daily basis (if needed), which only takes approximately 5-10 minutes, similar to refuelling at a petrol station. This fast-refuelling time is extremely beneficial and will allow us to operate the hydrogen bus more frequently and across more services, ensuring all areas of the Illawarra are able to experience this opportunity.</p>
+            </div>
+          </div>
+          <!--End Icon Box -->
+
+          <div class="col-xl-6 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-geo-alt"></i></div>
+              <h4 class="title"><a href="" class="stretched-link">Long Range</a></h4>
+              <p>The hydrogen bus possesses a longer driving range due to its ability to store hydrogen in larger quantities, regenerate energy and refuel quickly. All of the aforementioned are extremely beneficial to long distance driving and would spark interest and opportunity within communities outside of the Illawarra and South Coast.</p>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-volume-off"></i></div>
+              <h4 class="title"><a href="" class="stretched-link">Low Noise</a></h4>
+              <p>The hydrogen bus is much quieter than a diesel bus for a few reasons. Hydrogen buses have a powertrain design, meaning there are less parts required to move around for the bus to drive, creating less mechanical noise and allowing for smoother operation. Overall, the design and operation of the vehicle contributes to a much more comfortable and quieter travel experience.</p>
+            </div>
+          </div>
+          <!--End Icon Box -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!--  Bus Statistic  -->
+    <section id="pricing" class="pricing">
+      <div class="container" data-aos="fade-up">
+      <div class="section-header">
+        <div>
+          <h2>Our Hydrogen Bus Statistics</h2>
+          <p>Keep Track of the activities <span style="color:red;">"The Hydrogen Project started on 1st December 2023 with an odometer reading of 10058.5 km."</span></p>
+        </div>
+        <div class="d-flex align-items-center">
+            <a href="/BusTrackInterface" class="fill-button">More Data</a>
+        </div>
+      </div>
+      <p style="color:red;">Please Try to Refresh the page, if the chart is shrank</p>
+      <div class="price card col-lg-12">
+        <div class="card-body row justify-content-between">
+          <div class="col-lg-12">
+            <canvas id="myChart"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="pricing section justify-content-between">
+        <div class="plan popular col-sm-5">
+          <span>Long Range</span>
+          <h2>Statistic Data Until <%- neededData[0] %></h2>
+          <div class="price">Total distance driven</div>
+          <hr/>
+          <div class="card col-lg-12">
+            <div class="card-body">
+              <h5 class="card-text"><h5 id="TotalDistanceDriven" style="display: inline-block;"></h5><%- neededData[1] %> KM</h5>
+            </div>
+          </div>
+          <div class="card col-lg-12" style="width: 100% !important;">
+            <img src="../assets/images/bus/TankOne.png" class="card-img-top" alt="...">
+          </div>
+        </div>
+        <div class="plan popular col-sm-5">
+          <span>High Energy Efficiency</span>
+          <h2>Statistic Data Until <%- neededData[0] %></h2>
+          <div class="price">Total Energy Consumption</div>
+          <hr/>
+          <div class="card col-lg-12">
+            <div class="card-body">
+              <h5 class="card-text"><h5 id="H2HydrogenConsumption" style="display: inline-block;"><%- neededData[2] %></h5> KW</h5>
+            </div>
+          </div>
+          <div class="card col-lg-12" style="width: 100% !important;">
+            <img src="../assets/images/bus/modifiedBus2.png" class="card-img-top" alt="...">
+          </div>
+        </div>
+    </div>
+   </section>
+  <!--  End Pricing Section  -->
+
+
+    <!-- Track bus Map-->
+    <section id="about" class="about" style="margin-top: -100px;">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <div>
+            <h2>Track Our Hydrogen Bus</h2>
+          </div>
+          <div class="d-flex align-items-center">
+              <a href="/HydrogenBusProfile" class="fill-button">Understand The Hydrogen Bus</a>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">
+            <div class="content ps-0 ps-lg-5" data-aos="fade-right">
+              <div class="bar back expert" data-skill="Hydrolight 1: arcc_004"></div>
+            </div>
+          </div>
+
+          <div class="col-sm-6" style="text-align: center;">
+            <h4>Last Update: <span id="LastUpdate"></span></h4>
+          </div>
+          <div class="col-sm-3">
+            <h4>Status : <span style="font-size: 25px;" id="VehicleStatus">Offline</span></h4>
+          </div>
+
+        </div>
+
+        <div class="row gy-4">
+          <div class="col-lg-9">
+            <div id="map"></div>
+          </div>
+          <div class="col-lg-3">
+            <div class="card" style="min-height: 50%;">
+              <div class="card-body">
+                <h5 class="card-title">Speed :</h5>
+                <div style="text-align: center;">
+                  <h6 class="card-title" id="VehicleSpeed"></h6>
+                  <h6 class="card-title"> KM/H</h6>
+                </div>
+                <h4 class="card-title">Distance</h4>
+                <br>
+                <h6 class="text">Odometer : <span  id="VehicleOdo"></span> KM</h6>
+              </div>
+            </div>
+            <div class="card" style="min-height: 50%;">
+              <div class="card-body" >
+                <h5 class="card-title">Power :</h5>
+                <div style="text-align: center;">
+                  <h5 class="card-title" id="VehiclePower"></h5>
+                  <h6 class="card-title">KW</h6>
+                </div>
+                <h4 class="card-title">Energy</h4>
+                <br>
+                <h6 class="text">Status Of Charge: <span id="VehicleSOC"></span> %</h6>
+                <h6 class="text">Use Per Day: <span id="energy_used_per_day"></span> KWH</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <div>
+            <h2>Our Story</h2>
+            <p>Premier Motor Service - Change The Way You Travel Today</p>
+          </div>
+          <div class="d-flex align-items-center">
+              <a href="/CompanyProfile" class="fill-button">Read Our Full Story</a>
+          </div>
+        </div>
+
+        <div class="row gy-4">
+          <div class="col-lg-6">
+            <div class="d-flex h-100 image-overlay rounded-4">
+              <img src="../assets/images/bus/PremierIllawarra.jpg" class="img-fluid rounded-4 mb-4" alt="">
+              <div class="overlay-content rounded-4">
+                <h2 style="font-weight:300;" class="circle" data-aos="fade-up">Premier Motor Service</h2>
+                <a href="/CompanyProfile" class="button-style">Drive Further</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="d-flex h-100 image-overlay">
+              <img src="../assets/images/bus/IMG_5519.JPG" class="img-fluid rounded-4 mb-4" alt="">
+              <div class="overlay-content rounded-4">
+                <h2>Hydrogen Bus Project</h2>
+                <a href="/HydrogenBusProfile" class="button-style">Clean Earth</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+
+    <!-- Why Us Section -->
+    <section id="whyus" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <div>
+            <h2>Why Choose Us</h2>
+            <p>Premier Illawarra - Hydrogen Bus Project</p>
+          </div>
+          <div class="d-flex align-items-center">
+              <a href="/CompanyProfile" class="fill-button">Read More</a>
+          </div>
+        </div>
+
+        <div class="row gy-4  align-items-center">          
+          <div class="col-lg-6">
+            <div class="content ps-0">
+              <ul>
+                <li class="active"><i class="bi bi-arrow-right-circle-fill"></i> Extensive Coverage: Services span across the Illawarra region, including key locations like Wollongong and the University of Wollongong.</li>
+                <li><i class="bi bi-arrow-right-circle-fill"></i> School Transport: Offers direct school bus services, with free transport for eligible students.</li>
+                <li><i class="bi bi-arrow-right-circle-fill"></i> Charter Services: Provides a wide range of buses for charter with professional planning assistance.</li>
+                <li><i class="bi bi-arrow-right-circle-fill"></i> Accessibility: Covers both northern and southern parts of Illawarra, ensuring accessibility.</li>
+                <li><i class="bi bi-arrow-right-circle-fill"></i> Experience: Has established a reputation for reliable service in the area.</li>
+                <li><i class="bi bi-arrow-right-circle-fill"></i> Professional Staff: Employs experienced staff to help with trip planning and customer service.</li>
+                <li class="active"><i class="bi bi-arrow-right-circle-fill"></i> Community Engagement: Actively engages with the community to cater to its transportation needs.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <img src="../assets/images/hydrogentBusProject/MultiGroup.jpg" class="img-fluid rounded-4 mb-4" alt="">
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action">
+      <div class="container text-center" data-aos="zoom-out">
+        <h3>Have great ideas, ready to share with us</h3>
+        <p>or even better wanna join or work with us</p>
+        <a class="cta-btn" href="/Contact">Contact Us</a>
+      </div>
+    </section><!-- End Call To Action Section -->
+
+
+    <!-- Our Team Section -->
+    <section id="team" class="team sections-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <div>
+            <h2>Expert Team</h2>
+          </div>
+        </div>
+
+        <div class="row gy-4">
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="member">
+              <img src="../assets/images/avatars/LT2.jpg" class="img-fluid" alt="">
+              <h4>Lisa</h4>
+              <span>On-Time Running Coordinator</span>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="member">
+              <img src="../assets/images/avatars/JT3.jpg" class="img-fluid" alt="">
+              <h4>Jarrod</h4>
+              <span>Assistant General Manager & Contracts Manager</span>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="member">
+              <img src="../assets/images/avatars/LC4.jpg" class="img-fluid" alt="">
+              <h4>Lily</h4>
+              <span>Office Assistant</span>
+            </div>
+          </div><!-- End Team Member -->
+
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+              <img src="../assets/images/avatars/BW5.jpg" class="img-fluid" alt="JK">
+              <h4>Chencan</h4>
+              <span>IT & Data Analytics</span>
+            </div>
+          </div><!-- End Team Member -->
+        </div>
+      </div>
+    </section><!-- End Our Team Section -->
+
+
+    <!-- Frequently Asked Questions Section -->
+    <section id="faq" class="faq">
+      <div class="container" data-aos="fade-up">
+        <div class="row gy-4">
+            <div class="section-header">
+              <div>
+                <h2>Frequently Asked Questions</h2>
+                <p>Premier Illawarra - Hydrogen Bus Project</p>
+              </div>
+              <div class="d-flex align-items-center">
+                  <a href="/Feedback" class="fill-button">Provide Feedback</a>
+              </div>
+            </div>
+
+          <div class="col-lg-12">
+            <div class="accordion accordion-flush" id="faqlist" data-aos="fade-up" data-aos-delay="100">
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq-content-1">
+                    <span class="num"><i class="bi bi-arrow-right-circle-fill"></i></span>
+                    What is a hydrogen bus and how does it work?
+                  </button>
+                </h3>
+                <div id="faq-content-1" class="accordion-collapse collapse show" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                    A hydrogen bus is powered by fuel cells that convert hydrogen gas into electricity. This electricity then powers the electric motors that drive the bus. 
+                    The only by-products of this process are water and heat, making it an environmentally friendly alternative to traditional diesel buses.
+                  </div>
+                </div>
+              </div><!-- # Faq item-->
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq-content-2">
+                    <span class="num"><i class="bi bi-arrow-right-circle-fill"></i></span>
+                    Is it safe to ride on a hydrogen-powered bus?
+                  </button>
+                </h3>
+                <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                    Yes, hydrogen buses are designed with safety in mind. The hydrogen tanks are built to withstand severe impacts,
+                     and there are multiple sensors and safety systems in place to detect and manage leaks or other potential issues.
+                  </div>
+                </div>
+              </div><!-- # Faq item-->
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq-content-3">
+                    <span class="num"><i class="bi bi-arrow-right-circle-fill"></i></span>
+                    How does the cost of riding a hydrogen bus compare to traditional buses?
+                  </button>
+                </h3>
+                <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                    The ticket prices for riding a hydrogen bus are generally comparable to those of traditional buses. 
+                    While the operational costs for hydrogen fuel can be higher, many service providers work to keep fares affordable for passengers.
+                  </div>
+                </div>
+              </div><!-- # Faq item-->
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq-content-4">
+                    <span class="num"><i class="bi bi-arrow-right-circle-fill"></i></span>
+                    How often does the hydrogen bus need to refill?
+                  </button>
+                </h3>
+                <div id="faq-content-4" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                    The frequency at which a hydrogen bus needs to refuel depends on several factors.
+                    On average, hydrogen buses can travel approximately 300 to 400 kilometers (about 186 to 250 miles) on a full tank of hydrogen. This means that under typical urban operating conditions, a hydrogen bus might need to refuel every day or every other day.
+                  </div>
+                </div>
+              </div><!-- # Faq item-->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Frequently Asked Questions Section -->
+
+    <!-- Start Contact Section -->
+    <div id="contact" class="contact-section section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Contact Us</h2>
+          </div>
+          <div class="d-flex align-items-center">
+              <a href="/CompanyProfile" class="fill-button">Visit Page</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-8 col-md-12" data-aos="fade-left">
+            <div class="contact-form-box contact-form contact-form-3">
+              <div class="form-container-box">
+                <form class="contact-form form" method="post" action="/send">
+                  <div class="controls">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group form-input-box">
+                          <input type="text" class="form-control" id="name" name="name" placeholder="Name*"
+                            required="required" data-error="Name is required.">
+                          <div class="help-block with-errors"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group form-input-box">
+                          <input type="email" class="form-control" id="email" name="email" placeholder="Email*"
+                            required="required" data-error="Valid email is required.">
+                          <div class="help-block with-errors"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group form-input-box">
+                          <input type="text" class="form-control" name="subject" placeholder="Subject"
+                            required="required">
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-group form-input-box">
+                          <textarea class="form-control" id="message" name="message" rows="7"
+                            placeholder="Write Your Message*" required="required"
+                            data-error="Please, leave us a message."></textarea>
+                          <div class="help-block with-errors"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <button type="submit" data-text="Send Message">Send Message</button>
+                      </div>
+                      <div class="messages">
+                        <div class="alert alert alert-success alert-dismissable alert-dismissable hidden"
+                          id="msgSubmit"><button type="button" class="close" data-dismiss="alert"
+                            aria-hidden="true">&times;</button> Thank You! your message has been sent. </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12" data-aos="fade-right">
+            <div class="contact-information-box-3">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="single-contact-info-box">
+                    <div class="contact-info">
+                      <h6>Address:</h6>
+                      <p>13-23 Investigator Drive</p>
+                      <p>Unanderra NSW 2526</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12" style="padding-bottom: 120px !important;">
+                  <div class="single-contact-info-box">
+                    <div class="contact-info">
+                      <h6>Email:</h6>
+                      <p>enquiries@premierillawarra.com.au</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Contact Section -->
+
+
+  <!-- Clients Section -->
+  <section id="clients" class="clients">
+    <div class="container" data-aos="zoom-out">
+
+      <div class="clients-slider swiper">
+        <div class="swiper-wrapper align-items-center">
+          <div class="swiper-slide"><img src="../assets/images/clients/client-1.png" class="img-fluid" alt=""></div>
+          <div class="swiper-slide"><img src="../assets/images/clients/client-2.png" class="img-fluid" alt=""></div>
+          <div class="swiper-slide"><img src="../assets/images/clients/client-3.png" class="img-fluid" alt=""></div>
+          <div class="swiper-slide"><img src="../assets/images/clients/client-4.png" class="img-fluid" alt=""></div>
+          <div class="swiper-slide"><img src="../assets/images/clients/client-5.png" class="img-fluid" alt=""></div>
+        </div>
+      </div>
+
+
+    </div>
+  </section><!-- End Clients Section -->
+
+
+  <%- include('../views/partials/foot'); %>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    // Step 3: Create chart configuration
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: <%- JSON.stringify(chartDate) %>,
+            datasets: [{
+                label: 'Average Speed In Service (KM/H)',
+                data: <%- JSON.stringify(chartAveragespeed) %>,
+                borderColor: 'red',
+                yAxisID: 'y-axis-1',
+            }, {
+                label: 'SOC used (%)',
+                data: <%- JSON.stringify(chartSocUsed) %>,
+                borderColor: 'blue',
+                yAxisID: 'y-axis-1'
+            }, {
+                label: 'Energy Used (KW)',
+                data: <%- JSON.stringify(chartEnegeryUsed) %>,
+                borderColor: 'green',
+                yAxisID: 'y-axis-1'
+            },{
+                label: 'Distance Traveled (KM)',
+                data: <%- JSON.stringify(chartDistanceDriven) %>,
+                borderColor: 'purple',
+                yAxisID: 'y-axis-1'
+            },
+            {
+                label: 'Regenerateion Rate (%)',
+                data: <%- JSON.stringify(chartRegenerationRate) %>,
+                borderColor: 'Cyan',
+                yAxisID: 'y-axis-1'
+            },
+          ]
+        },
+        options: {
+            scales: {
+                'y-axis-1': {
+                    type: 'linear',
+                    display: true,
+                    position: 'left',
+                },
+            }
+        }
+    });
+
+
+  //----------------------------------------------------------map
+    var map = L.map('map').setView([-34.4599609375, 150.84713745117188], 16);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    var busIcon = L.icon({
+        iconUrl: "../assets/images/hydrogentBusProject/trackingIconRemoved.png",
+        iconSize: [38, 38],  // Adjust if your icon size is different
+        iconAnchor: [19, 38], // Adjust based on your icon's shape and layout
+        popupAnchor: [0, -38] // Adjust for where you want the popup to open
+    });
+
+    var marker = L.marker([-34.4599609375, 150.84713745117188], {icon: busIcon}).addTo(map);
+    marker.bindPopup("<b>Hydrogen Bus</b><br>arcc_004").openPopup();
+//---------------------------------------------------------------------------- live data
+    var socket = io.connect();
+
+      socket.on('connect', function() {
+          console.log('Websocket connected!');
+      });
+
+      socket.on('update_data', function(data) {
+          // Update your webpage with new data here
+
+        console.log(data);
+                  
+        var labelValue = data.payload.label;
+
+        if (labelValue === 'speed') {
+          document.getElementById('VehicleStatus').textContent = "Running";
+            document.getElementById('VehicleSpeed').textContent = parseInt(data.payload.value);
+        } 
+        else if (labelValue === 'odo') {;
+            document.getElementById('VehicleOdo').textContent = parseInt(data.payload.value);
+
+            //----------every time get odo, update time
+            var timestamp = data.payload.time;
+
+            // Create a new Date object
+            var date = new Date(timestamp);
+
+            // Specify the options for toLocaleString
+            var options = {
+                year: 'numeric', month: 'numeric', day: 'numeric',
+                hour: 'numeric', minute: 'numeric', second: 'numeric',
+                hour12: false,
+                timeZone: 'Australia/Sydney'
+            };
+
+            // Convert to Sydney local time
+            var sydneyTime = date.toLocaleString('en-AU', options);
+            document.getElementById('LastUpdate').textContent = sydneyTime;
+        } 
+        else if (labelValue === 'gps') 
+        {
+
+            // The GPS value is a string with latitude and longitude separated by a pipe '|'
+            document.getElementById('VehicleStatus').textContent = "Running";
+            var gpsValues = data.payload.value.split('|');
+            var lat = parseFloat(gpsValues[0]);
+            var lng = parseFloat(gpsValues[1]);
+
+            // Update the marker's position
+            
+            marker.setLatLng([lat, lng]);
+            map.setView([lat, lng], map.getZoom());
+            // If you want to move the map's focus to the new marker position, uncomment the next line
+            // map.setView([lat, lng], map.getZoom());
+        }
+        else if (labelValue === 'power') 
+        {
+          document.getElementById('VehicleStatus').textContent = "Running";
+          document.getElementById('VehiclePower').textContent = parseInt(data.payload.value);
+          
+        }
+        else if (labelValue === 'soc') {
+          document.getElementById('VehicleSOC').textContent = data.payload.value;
+
+        }
+        else if (labelValue === 'energy_used_per_day') 
+        {
+          document.getElementById('energy_used_per_day').textContent = data.payload.value.toFixed(2);
+        }
+        else
+        {
+             console.log(data);
+             document.getElementById('VehicleStatus').innerText = "Offline";
+            //document.getElementById('vehicle_data3').textContent = JSON.stringify(data, null, 2);
+        }
+          
+
+      });
+
+    </script>
+  <%- include('../views/partials/footer'); %>

@@ -1,0 +1,467 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap");
+
+.OurStoryContainer {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+
+
+.OurStoryContainer {
+    width: 100% !important;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	overflow: hidden;
+	background: #697854;
+	margin: 0;
+	padding: 0;
+	font-family: "Josefin Slab", serif;
+	position: relative;
+}
+
+.background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100% !important;
+	height: 100%;
+	background: url(../images/banner/PIHistory.png);
+	background-size: cover;
+	background-position: center top;
+	z-index: -1;
+	filter: blur(3px);
+}
+
+.woolf {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url(../images/JKing.png);
+	background-position: center left;
+	background-size: 500px;
+	background-repeat: no-repeat;
+	z-index: 0;
+	mix-blend-mode: hard-light;
+	opacity: 1;
+}
+
+.content-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: auto;
+	filter: drop-shadow(5px 5px 25px black);
+	display: none;
+}
+
+.content {
+	position: relative;
+	display: none;
+	top: 10px;
+	background: url("https://i.imgur.com/0kjMcUe.png");
+	background-size: 1000px;
+	background-position: center right;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	width: 50%;
+	height: auto;
+	padding: 30px 80px 50px 80px;
+	z-index: 1;
+	filter: brightness(0.95) sepia(30%) saturate(80%);
+	border-radius: 30px;
+	height: 90vh;
+	clip-path: polygon(
+		0% 0%,
+		0% 93%,
+		5% 98%,
+		6% 99%,
+		8% 95%,
+		12% 94%,
+		15% 97%,
+		17% 93%,
+		20% 98%,
+		22% 97%,
+		25% 99%,
+		31% 94%,
+		35% 93%,
+		39% 96%,
+		43% 93%,
+		45% 94%,
+		47% 95%,
+		50% 92%,
+		52% 96%,
+		54% 93%,
+		58% 92%,
+		60% 95%,
+		62% 93%,
+		65% 96%,
+		69% 93%,
+		72% 93%,
+		75% 94%,
+		79% 97%,
+		81% 94%,
+		85% 93%,
+		88% 92%,
+		90% 95%,
+		93% 93%,
+		95% 92%,
+		97% 95%,
+		100% 97%,
+		100% 0%
+	);
+	overflow: auto;
+}
+
+@media screen and (max-width: 1650px) {
+	.content {
+		width: 100%;
+	}
+
+	.content-container {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 1500px) {
+	.content {
+		width: 100%;
+	}
+
+	.content-container {
+		display: none;
+	}
+
+}
+
+@media screen and (max-width: 868px) {
+	.content {
+		padding: 30px 60px 50px 60px;
+		width: 100%;
+	}
+	.content-container {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 560px) {
+	.content {
+		padding: 30px 30px 50px 30px;
+		width: 100%;
+	}
+
+	.content-container {
+		display: block;
+	}
+}
+
+
+
+.instruction, .book {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.book {
+	width: 847px;
+	height: 654.5px;
+	transform: translate(-50%, -50%) rotatex(10deg) rotatey(-10deg);
+	transform-style: preserve-3d;
+  
+}
+
+
+.page {
+  width: 423.5px;
+  height: 654.5px;
+  background: url("https://i.imgur.com/0kjMcUe.png");
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: transform 1s;
+}
+
+.page:nth-child(1) {
+  padding: 5% 4% 4% 5%;
+  transform-origin: 0% 50%;
+  transform: translatez(-1px);
+  background: url("https://i.imgur.com/0kjMcUe.png");
+}
+
+.left-side:nth-child(1) {
+  transform: translatez(1px) rotatey(-180deg);
+}
+
+.page:nth-child(2) {
+  padding: 5% 5% 4% 4%;
+  transform-origin: 100% 50%;
+  transform: translatez(-2px) scalex(-1) translatex(100%);
+  background: url("https://i.imgur.com/0kjMcUe.png");
+}
+
+.left-side:nth-child(2) {
+  transform: translatez(2px) scalex(-1) translatex(100%) rotatey(180deg);
+}
+
+.page:nth-child(3) {
+  padding: 5% 4% 4% 5%;
+  transform-origin: 0% 50%;
+  transform: translatez(-3px);
+  background: url("https://i.imgur.com/0kjMcUe.png");
+}
+
+.left-side:nth-child(3) {
+  transform: translatez(3px) rotatey(-180deg);
+}
+
+.page:nth-child(4) {
+  padding: 5% 5% 4% 4%;
+  transform-origin: 100% 50%;
+  transform: translatez(-4px) scalex(-1) translatex(100%);
+  background: url("https://i.imgur.com/0kjMcUe.png");
+}
+
+.left-side:nth-child(4) {
+  transform: translatez(4px) scalex(-1) translatex(100%) rotatey(180deg);
+}
+
+.page:nth-child(5) {
+  padding: 5% 4% 4% 5%;
+  transform-origin: 0% 50%;
+  transform: translatez(-5px);
+  background: url("https://i.imgur.com/0kjMcUe.png");
+}
+
+.left-side:nth-child(5) {
+  transform: translatez(5px) rotatey(-180deg);
+}
+
+.page:nth-child(6) {
+  padding: 5% 5% 4% 4%;
+  transform-origin: 100% 50%;
+  transform: translatez(-6px) scalex(-1) translatex(100%);
+  background: url("https://i.imgur.com/0kjMcUe.png");
+}
+
+.left-side:nth-child(6) {
+  transform: translatez(6px) scalex(-1) translatex(100%) rotatey(180deg);
+}
+
+.page:nth-child(7) {
+  padding: 5% 4% 4% 5%;
+  transform-origin: 0% 50%;
+  transform: translatez(-7px);
+  background: url("https://i.imgur.com/0kjMcUe.png");
+}
+
+.left-side:nth-child(7) {
+  transform: translatez(7px) rotatey(-180deg);
+}
+
+.page:nth-child(8) {
+  padding: 5% 5% 4% 4%;
+  transform-origin: 100% 50%;
+  transform: translatez(-8px) scalex(-1) translatex(100%);
+  background: url("https://i.imgur.com/0kjMcUe.png");
+}
+
+.left-side:nth-child(8) {
+  transform: translatez(8px) scalex(-1) translatex(100%) rotatey(180deg);
+}
+
+.page:nth-child(9) {
+  padding: 5% 4% 4% 5%;
+  transform-origin: 0% 50%;
+  transform: translatez(-9px);
+  background: url("https://i.imgur.com/0kjMcUe.png");
+}
+
+.left-side:nth-child(9) {
+  transform: translatez(9px) rotatey(-180deg);
+}
+
+.page:nth-child(10) {
+  padding: 5% 5% 4% 4%;
+  transform-origin: 100% 50%;
+  transform: translatez(-10px) scalex(-1) translatex(100%);
+  background: url("https://i.imgur.com/0kjMcUe.png");
+}
+
+.left-side:nth-child(10) {
+  transform: translatez(10px) scalex(-1) translatex(100%) rotatey(180deg);
+}
+
+.page:nth-child(11) {
+  padding: 5% 4% 4% 5%;
+  transform-origin: 0% 50%;
+  transform: translatez(-11px);
+  background: url("https://i.imgur.com/0kjMcUe.png");
+}
+
+.left-side:nth-child(11) {
+  transform: translatez(11px) rotatey(-180deg);
+}
+
+.page:nth-child(12) {
+  padding: 5% 5% 4% 4%;
+  transform-origin: 100% 50%;
+  transform: translatez(-12px) scalex(-1) translatex(100%);
+  background: url("https://i.imgur.com/0kjMcUe.png");
+}
+
+.left-side:nth-child(12) {
+  transform: translatez(12px) scalex(-1) translatex(100%) rotatey(180deg);
+}
+
+.page:nth-child(13) {
+  padding: 5% 4% 4% 5%;
+  transform-origin: 0% 50%;
+  transform: translatez(-13px);
+  background: url("https://i.imgur.com/0kjMcUe.png");
+}
+
+.left-side:nth-child(13) {
+  transform: translatez(13px) rotatey(-180deg);
+}
+
+.page:nth-child(14) {
+  padding: 5% 5% 4% 4%;
+  transform-origin: 100% 50%;
+  transform: translatez(-14px) scalex(-1) translatex(100%);
+  background: url("https://i.imgur.com/0kjMcUe.png");
+}
+
+.left-side:nth-child(14) {
+  transform: translatez(14px) scalex(-1) translatex(100%) rotatey(180deg);
+}
+
+.page:nth-child(15) {
+  padding: 5% 4% 4% 5%;
+  transform-origin: 0% 50%;
+  transform: translatez(-15px);
+  background: url("https://i.imgur.com/0kjMcUe.png");
+}
+
+.left-side:nth-child(15) {
+  transform: translatez(15px) rotatey(-180deg);
+}
+
+.page:nth-child(16) {
+  padding: 5% 5% 4% 4%;
+  transform-origin: 100% 50%;
+  transform: translatez(-16px) scalex(-1) translatex(100%);
+  background: url("https://i.imgur.com/0kjMcUe.png");
+}
+
+.left-side:nth-child(16) {
+  transform: translatez(16px) scalex(-1) translatex(100%) rotatey(180deg);
+}
+
+.cover-front:nth-child(1) {
+  text-align: center; /* Makes the background image cover the entire container */
+  background: url(../images/bus/IMG_9173.PNG);
+  background-size: cover;
+}
+.cover-front:nth-child(1) h1 {
+  font-family: "Lora", serif;
+  font-size: 45px;
+  color: white;
+  margin-top: 30px;
+  text-transform: uppercase;
+}
+.cover-front:nth-child(1) h2 {
+  font-family: "EB Garamond", serif;
+  font-size: 24px;
+  color: white;
+  position: relative;
+  top: 40%;
+}
+.cover-front:nth-child(1) .hat {
+  font-size: 100px;
+  color: #134a78;
+  position: relative;
+  top: 3%;
+}
+
+p {
+  margin-bottom: 4%;
+  font-family: "EB Garamond", serif;
+  font-size: 16px;
+}
+
+.page:nth-child(3) p:first-of-type:first-letter {
+  font-size: 32px;
+}
+
+.instruction {
+  left: calc(50% - 150px);
+  font-size: 26px;
+  font-family: "EB Garamond", serif;
+  color: #0009;
+  background: #fff7;
+  border-radius: 15px;
+  padding: 10px 15px;
+}
+
+
+@media screen and (max-width: 1650px) {
+	.instruction {
+		display: block;
+	}
+
+	.book {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 1500px) {
+	.instruction {
+		display: block;
+	}
+
+	.book {
+		display: block;
+	}
+
+}
+
+@media screen and (max-width: 868px) {
+	.instruction {
+		display: none;
+	}
+
+	.book {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 560px) {
+	.instruction {
+		display: none;
+	}
+
+	.book {
+		display: none;
+	}
+}
+
+  
+@media screen and (min-width: 1950px) and (max-width: 2400px) {
+    .book {
+        transform: translate(-50%, -50%) rotatex(10deg) rotatey(-10deg) scale(0.9);
+        transform-origin: center center;
+    }
+
+    /* You can add similar transformations for .page or other elements if needed */
+}

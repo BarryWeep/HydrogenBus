@@ -1,0 +1,142 @@
+/* 
+  Tempate Name: InnovateTech - Technology & It Solution Multipupose Website Template
+  Author      : ZRTHEMES
+  Version     : 1.0
+  Author URI  : https://www.templatemonster.com/authors/zrthemes/
+  */
+
+
+/*--------------------------------------------------------------
+# Single Page
+--------------------------------------------------------------*/
+.page-hero{
+  background: linear-gradient(#ffffff, rgb(178 178 178 / 0%)), url(../images/hero-bg.jpg) center center;
+  background-size: cover;
+  padding: 150px 60px;
+  border-radius: 0px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.page-hero h2{
+  color: #fff;
+}
+
+.page-hero p{
+  color: #fff;
+}
+
+.breadcrumb{
+  position: absolute;
+  bottom: -166px;
+  right: 0;
+  background: #f6f6f6;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.breadcrumb ul{
+  display: flex;
+}
+
+.breadcrumb ul li{
+  margin: 0 10px;
+}
+.single-page .recent-posts .title a{
+  color: #01ba89;
+}
+.single-page .recent-posts article{
+  background: #fff;
+}
+.single-page ul li:hover{
+  background: var(--color-primary);
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.single-page ul li:hover i,
+.single-page ul li:hover a{
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.single-page ul li{
+  padding: 15px 21px 15px 20px;
+  position: relative;
+  color: #01ba89;
+  background: #f3f3f3;
+  margin-bottom: 5px;
+  border-radius: 8px;
+  display: flex;
+  gap: 10px;
+}
+
+/*--------------------------------------------------------------
+# Pagination Comments
+--------------------------------------------------------------*/
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.pagination .pages {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.pagination .page {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.pagination .page {
+  height: 40px;
+  width: 60px;
+  border-radius: 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #000;
+}
+
+.pagination .page:hover {
+  background-color: #01ba89;
+  color: #fff;
+}
+
+.pagination .active {
+  background-color: #01ba89;
+  color: #fff;
+}
+
+.btn {
+  background-color: #01ba89;
+  border: 1px solid #01ba89;
+  height: 40px;
+  border-radius: 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  background-color: #01ba89;
+}
+
+.btn--icon {
+  height: 24px;
+  width: 24px;
+  stroke: #ffffff;
+}
+
+.btn--icon:hover {
+  stroke: #fff;
+}

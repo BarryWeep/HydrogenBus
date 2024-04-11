@@ -1,0 +1,61 @@
+CREATE DATABASE  premiert_premierHydrogenadmin
+
+USER: premiert_premierillawaraotr
+PASSWORD: +gGGs[vL9CwW
+
+CREATE TABLE lastrun (
+    RunID INT AUTO_INCREMENT PRIMARY KEY,
+    Vehicle VARCHAR(256),
+    StartTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    EndTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    AverageSpeed INT,
+    Odometer INT,
+    DistanceDriven INT,
+    PowerConsumption FLOAT,
+    EnergyUsed FLOAT,
+    EnergyGenerated FLOAT,
+    EnergyCharged FLOAT,
+    ConsumptionInService FLOAT,
+    ConsumptionPresent FLOAT,
+    EndingGPS VARCHAR(256)
+);
+
+
+
+CREATE TABLE daily_bus_data (
+  `DateTime` varchar(15),
+  `Hydrolight_1_-_Average_Speed_in_service` float,
+  `Hydrolight_1_-_Average_Speed` float,
+  `Hydrolight_1_-_Charge_Cycles` float,
+  `Hydrolight_1_-_Number_of_charging_sessions` int,
+  `Hydrolight_1_-_Distance_driven_in_area` float,
+  `Hydrolight_1_-_Consumption_driving` float,
+  `Hydrolight_1_-_Consumption_overall` float,
+  `Hydrolight_1_-_Consumption_in_service` float,
+  `Hydrolight_1_-_Energy_charged` float,
+  `Hydrolight_1_-_Energy_consumed_driving` float,
+  `Hydrolight_1_-_Energy_driven` float,
+  `Hydrolight_1_-_Energy_idled` float,
+  `Hydrolight_1_-_Energy_used_in_service` float,
+  `Hydrolight_1_-_Energy_used_not_in_service` float,
+  `Hydrolight_1_-_Energy_regenerated_driving` float,
+  `Hydrolight_1_-_Energy_used` float,
+  `Hydrolight_1_-_Distance_driven` float,
+  `Hydrolight_1_-_Regeneration_rate` float,
+  `Hydrolight_1_-_Relative_distance_driven_in_area` float,
+  `Hydrolight_1_-_Relative_time_in_area` float,
+  `Hydrolight_1_-_SOC_charged` float,
+  `Hydrolight_1_-_SOC_used` float,
+  `Hydrolight_1_-_SOC_used_driving` float,
+  `Hydrolight_1_-_SOC_used_idling` float,
+  `Hydrolight_1_-_SOC_used_in_service` float,
+  `Hydrolight_1_-_SOC_used_not_in_service` float,
+  `Hydrolight_1_-_Time_charging` float,
+  `Hydrolight_1_-_Time_driving_consuming` float,
+  `Hydrolight_1_-_Time_driving` float,
+  `Hydrolight_1_-_Time_idling` float,
+  `Hydrolight_1_-_Time_in_area` float,
+  `Hydrolight_1_-_Time_in_service` float,
+  `Hydrolight_1_-_Time_not_in_service` float DEFAU,
+  `Hydrolight_1_-_ODO` int(7) 
+)

@@ -1,0 +1,358 @@
+<%- include('../views/partials/head'); %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+<style>
+    #map { height: 600px; width: 100%;}
+</style>
+
+<%- include('../views/partials/header'); %>
+  <!-- Hero Section -->
+
+  <section id="hero" class="page-hero">
+    <div class="container position-relative">
+     
+      <div class="breadcrumb">
+        <ul>
+          <li><strong>You are here:</strong></li>
+          <li><a href="/">Home</a></li>
+          <li><i class="bi bi-chevron-double-right"></i></li>
+          <li>Track Bus</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- End Hero Section -->
+  <section id="about" class="about" style="margin-top: -100px;">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-header">
+        <div>
+          <h2>Track Our Hydrogen Bus</h2>
+        </div>
+        <div class="d-flex align-items-center">
+            <a href="/HydrogenBusProfile" class="fill-button">Understand The Hydrogen Bus</a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <div class="content ps-0 ps-lg-5" data-aos="fade-right">
+            <div class="bar back expert" data-skill="Hydrolight 1: arcc_004"></div>
+          </div>
+        </div>
+
+        <div class="col-sm-6" style="text-align: center;">
+          <h4>Last Update: <span id="LastUpdate"></span></h4>
+        </div>
+        <div class="col-sm-3">
+          <h4>Status : <span style="font-size: 25px;" id="VehicleStatus">Offline</span></h4>
+        </div>
+
+      </div>
+
+      <div class="row gy-4">
+        <div class="col-lg-9">
+          <div id="map"></div>
+        </div>
+        <div class="col-lg-3">
+          <div class="card" style="min-height: 50%;">
+            <div class="card-body">
+              <h5 class="card-title">Speed :</h5>
+              <div style="text-align: center;">
+                <h6 class="card-title" id="VehicleSpeed"></h6>
+                <h6 class="card-title"> KM/H</h6>
+              </div>
+              <h4 class="card-title">Distance</h4>
+              <br>
+              <h6 class="text">Odometer : <span  id="VehicleOdo"></span> KM</h6>
+            </div>
+          </div>
+          <div class="card" style="min-height: 50%;">
+            <div class="card-body" >
+              <h5 class="card-title">Power :</h5>
+              <div style="text-align: center;">
+                <h5 class="card-title" id="VehiclePower"></h5>
+                <h6 class="card-title">KW</h6>
+              </div>
+              <h4 class="card-title">Energy</h4>
+              <br>
+              <h6 class="text">Status Of Charge: <span id="VehicleSOC"></span> %</h6>
+              <h6 class="text">Use Per Day: <span id="energy_used_per_day"></span> KWH</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End About Us Section -->
+
+  <section id="pricing" class="pricing">
+    <div class="container" data-aos="fade-up">
+    <div class="section-header">
+      <div>
+        <h2>Our Hydrogen Bus Statistics</h2>
+        <p>Keep Track of the activities <span style="color:red;">"The Hydrogen Project started on 1st December 2023 with an odometer reading of 10058.5 km."</span></p>
+      </div>
+      <div class="d-flex align-items-center">
+          <a href="/BusTrackInterface" class="fill-button">More Data</a>
+      </div>
+    </div>
+    <p style="color:red;">Please Try to Refresh the page, if the chart is shrank</p>
+    <div class="price card col-lg-12">
+      <div class="card-body row justify-content-between">
+        <div class="col-lg-12">
+          <canvas id="myChart"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="pricing section justify-content-between">
+      <div class="plan popular col-sm-5">
+        <span>Long Range</span>
+        <h2>Statistic Data Until <%- neededData[0] %></h2>
+        <div class="price">Total distance driven</div>
+        <hr/>
+        <div class="card col-lg-12">
+          <div class="card-body">
+            <h5 class="card-text"><h5 id="TotalDistanceDriven" style="display: inline-block;"></h5><%- neededData[1] %> KM</h5>
+          </div>
+        </div>
+        <div class="card col-lg-12" style="width: 100% !important;">
+          <img src="../assets/images/bus/TankOne.png" class="card-img-top" alt="...">
+        </div>
+      </div>
+      <div class="plan popular col-sm-5">
+        <span>High Energy Efficiency</span>
+        <h2>Statistic Data Until <%- neededData[0] %></h2>
+        <div class="price">Total Energy Consumption</div>
+        <hr/>
+        <div class="card col-lg-12">
+          <div class="card-body">
+            <h5 class="card-text"><h5 id="H2HydrogenConsumption" style="display: inline-block;"><%- neededData[2] %></h5> KW</h5>
+          </div>
+        </div>
+        <div class="card col-lg-12" style="width: 100% !important;">
+          <img src="../assets/images/bus/modifiedBus2.png" class="card-img-top" alt="...">
+        </div>
+      </div>
+  </div>
+ </section>
+
+ <section id="whyus" class="about" style="text-align: center;">
+  <div class="container" data-aos="fade-up" >
+    <h2 style="color:#01BA89; margin-bottom: 50px; margin-top: -70px;">Traditional Fuel Car Emissions VS Hydrogen Bus Emissions </h2>
+    <p style="color:red">Please Try to Refresh, if the chart is shrinked</p>
+    <div class="row">
+        <div class="col-lg-6">
+            <h2>Traditional Fuel Car Emissions</h2>
+            <canvas id="traditionalCarChart"></canvas>
+        </div>
+        <div class="col-lg-6">
+            <h2>Hydrogen Bus Emissions</h2>
+            <canvas id="hydrogenBusChart"></canvas>
+        </div>
+    </div>
+  </div>
+</section>
+
+
+<%- include('../views/partials/foot'); %>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    // Step 3: Create chart configuration
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: <%- JSON.stringify(chartDate) %>,
+            datasets: [{
+                label: 'Average Speed In Service (KM/H)',
+                data: <%- JSON.stringify(chartAveragespeed) %>,
+                borderColor: 'red',
+                yAxisID: 'y-axis-1',
+            }, {
+                label: 'SOC used (%)',
+                data: <%- JSON.stringify(chartSocUsed) %>,
+                borderColor: 'blue',
+                yAxisID: 'y-axis-1'
+            }, {
+                label: 'Energy Used (KW)',
+                data: <%- JSON.stringify(chartEnegeryUsed) %>,
+                borderColor: 'green',
+                yAxisID: 'y-axis-1'
+            },{
+                label: 'Distance Traveled (KM)',
+                data: <%- JSON.stringify(chartDistanceDriven) %>,
+                borderColor: 'purple',
+                yAxisID: 'y-axis-1'
+            },
+            {
+                label: 'Regenerateion Rate (%)',
+                data: <%- JSON.stringify(chartRegenerationRate) %>,
+                borderColor: 'Cyan',
+                yAxisID: 'y-axis-1'
+            },]
+        },
+        options: {
+            scales: {
+                'y-axis-1': {
+                    type: 'linear',
+                    display: true,
+                    position: 'left',
+                },
+            }
+        }
+    });
+    const traditionalCarData = {
+          labels: ['CO', 'CO2', 'NOx', 'HC', 'Other'],
+          datasets: [{
+              label: 'Traditional Car Emissions',
+              data: [30, 50, 10, 5, 5],
+              backgroundColor: [
+                  '#FF6384', // 粉红色
+                  '#36A2EB', // 淡蓝色
+                  '#FFCE56', // 黄色
+                  '#4BC0C0', // 蓝绿色
+                  '#9966FF'  // 淡紫色
+              ],
+          }]
+    };
+    const hydrogenBusData = {
+        labels: ['Water Vapor', 'CO2', 'Other'],
+        datasets: [{
+            label: 'Hydrogen Bus Emissions',
+            data: [90, 5, 5],
+            backgroundColor: ['lightblue', 'lightgreen', 'grey'],
+        }]
+    };
+
+    const options = {
+        cutout: '50%', // 创建环形图而不是饼图
+        plugins: {
+            datalabels: {
+                color: '#fff',
+                font: {
+                    weight: 'bold'
+                },
+                formatter: (value, ctx) => {
+                    return ctx.chart.data.labels[ctx.dataIndex] + '\n' + value + '%';
+                }
+            }
+        }
+    };
+
+    new Chart(document.getElementById('traditionalCarChart'), {
+        type: 'doughnut',
+        data: traditionalCarData,
+        options: options
+    });
+
+    new Chart(document.getElementById('hydrogenBusChart'), {
+        type: 'doughnut',
+        data: hydrogenBusData,
+        options: options
+    });
+
+
+
+//----------------------------------------------------------map
+  var map = L.map('map').setView([-34.4599609375, 150.84713745117188], 16);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+
+  var busIcon = L.icon({
+      iconUrl: "../assets/images/hydrogentBusProject/trackingIconRemoved.png",
+      iconSize: [38, 38],  // Adjust if your icon size is different
+      iconAnchor: [19, 38], // Adjust based on your icon's shape and layout
+      popupAnchor: [0, -38] // Adjust for where you want the popup to open
+  });
+
+  var marker = L.marker([-34.4599609375, 150.84713745117188], {icon: busIcon}).addTo(map);
+  marker.bindPopup("<b>Hydrogen Bus</b><br>arcc_004").openPopup();
+//---------------------------------------------------------------------------- live data
+  var socket = io.connect();
+
+    socket.on('connect', function() {
+        console.log('Websocket connected!');
+    });
+
+    socket.on('update_data', function(data) {
+        // Update your webpage with new data here
+
+      //console.log(data);
+                
+      var labelValue = data.payload.label;
+
+      if (labelValue === 'speed') {
+        document.getElementById('VehicleStatus').textContent = "Running";
+          document.getElementById('VehicleSpeed').textContent = parseInt(data.payload.value);
+      } 
+      else if (labelValue === 'odo') {;
+          document.getElementById('VehicleOdo').textContent = parseInt(data.payload.value);
+
+          //----------every time get odo, update time
+          var timestamp = data.payload.time;
+
+          // Create a new Date object
+          var date = new Date(timestamp);
+
+          // Specify the options for toLocaleString
+          var options = {
+              year: 'numeric', month: 'numeric', day: 'numeric',
+              hour: 'numeric', minute: 'numeric', second: 'numeric',
+              hour12: false,
+              timeZone: 'Australia/Sydney'
+          };
+
+          // Convert to Sydney local time
+          var sydneyTime = date.toLocaleString('en-AU', options);
+          document.getElementById('LastUpdate').textContent = sydneyTime;
+      } 
+      else if (labelValue === 'gps') 
+      {
+
+          // The GPS value is a string with latitude and longitude separated by a pipe '|'
+          document.getElementById('VehicleStatus').textContent = "Running";
+          var gpsValues = data.payload.value.split('|');
+          var lat = parseFloat(gpsValues[0]);
+          var lng = parseFloat(gpsValues[1]);
+
+          // Update the marker's position
+          
+          marker.setLatLng([lat, lng]);
+          map.setView([lat, lng], map.getZoom());
+          // If you want to move the map's focus to the new marker position, uncomment the next line
+          // map.setView([lat, lng], map.getZoom());
+      }
+      else if (labelValue === 'power') 
+      {
+        document.getElementById('VehicleStatus').textContent = "Running";
+        document.getElementById('VehiclePower').textContent = parseInt(data.payload.value);
+        
+      }
+      else if (labelValue === 'soc') {
+        document.getElementById('VehicleSOC').textContent = data.payload.value;
+
+      }
+      else if (labelValue === 'energy_used_per_day') 
+      {
+        document.getElementById('energy_used_per_day').textContent = data.payload.value.toFixed(2);
+      }
+      else
+      {
+           console.log(data);
+           document.getElementById('VehicleStatus').innerText = "Offline";
+          //document.getElementById('vehicle_data3').textContent = JSON.stringify(data, null, 2);
+      }
+        
+
+    });
+
+
+  
+  </script>
+
+<%- include('../views/partials/footer'); %>

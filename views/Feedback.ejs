@@ -1,0 +1,290 @@
+<%- include('../views/partials/head'); %>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<%- include('../views/partials/header'); %>
+
+  <!-- Hero Section -->
+  <section id="hero" class="page-hero">
+    <div class="container position-relative">
+     
+      <div class="breadcrumb">
+        <ul>
+          <li><strong>You are here:</strong></li>
+          <li><a href="/">Home</a></li>
+          <li><i class="bi bi-chevron-double-right"></i></li>
+          <li>Feedback</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- End Hero Section -->
+
+  <!-- Why Us Section -->
+  <section id="whyus" class="about" >
+    <div class="container" data-aos="fade-up">
+      <div class="card mb-5" >
+        <div class="card-body">
+            <h2>Zero Emission Buses - Customer Feedback </h2>
+            <p>We would love to hear your thoughts or feedback on how we can improve your experience!</p>
+        </div>
+      </div>
+
+      <form id="surveyForm" action="/QuestionairSubmit" method="post">
+          <!-- 第一个问题的卡片 -->
+          <div class="card mb-3">
+            <div class="card-body">
+              <h4>Customer Information - Optional </h4>
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="form-group form-input-box">
+                    <label for="FullName">Full Name</label>
+                    <input type="text" class="form-control" id="FullName" name="FullName" >
+                  </div>
+                </div>
+                <div class="col-lg-2"></div>
+                <div class="col-lg-6">
+                  <div class="form-group form-input-box">
+                    <label for="email">Contact Emails</label>
+                    <input type="email" class="form-control" id="email" name="email" >
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+          <div class="card mb-3">
+              <div class="card-body">
+                  <label>1. How satisfied were you with your experience on this bus? <span style="color:red">*</span></label>
+                  <div class="form-check">
+                      <input class="form-check-input" type="radio" name="CustomerExperience" id="CustomerExperience" value="NotSatisfied">
+                      <label class="form-check-label" for="NotSatisfied">Not Satisfied</label>
+                  </div>
+                  <div class="form-check">
+                      <input class="form-check-input" type="radio" name="CustomerExperience" id="CustomerExperience" value="SlightlySatisfied">
+                      <label class="form-check-label" for="Slightly Satisfied">Slightly Satisfied</label>
+                  </div>
+                  <div class="form-check">
+                      <input class="form-check-input" type="radio" name="CustomerExperience" id="CustomerExperience" value="Satisfied">
+                      <label class="form-check-label" for="Satisfied">Satisfied</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="CustomerExperience" id="CustomerExperience" value="VerySatisfied">
+                    <label class="form-check-label" for="VerySatisfied">Very Satisfied</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="CustomerExperience" id="CustomerExperience" value="ExtremelySatisfied">
+                    <label class="form-check-label" for="ExtremelySatisfied">Extremely Satisfied</label>
+                </div>
+              </div>
+          </div>
+
+          <div class="card mb-3">
+            <div class="card-body">
+                <label>2. To what extent does the eco-friendly aspect of the hydrogen bus influence your choice of transportation? <span style="color:red">*</span></label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="EcofriendlyAspect" id="EcofriendlyAspect" value="Notatall">
+                    <label class="form-check-label" for="EcofriendlyAspect">Not at all</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="EcofriendlyAspect" id="EcofriendlyAspect" value="Slightly">
+                    <label class="form-check-label" for="EcofriendlyAspect">Slightly</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="EcofriendlyAspect" id="EcofriendlyAspect" value="Moderately">
+                    <label class="form-check-label" for="EcofriendlyAspect">Moderately</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="EcofriendlyAspect" id="EcofriendlyAspect" value="Veryatisfied">
+                  <label class="form-check-label" for="EcofriendlyAspect">Very Satisfied</label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="EcofriendlyAspect" id="EcofriendlyAspect" value="Verymuch">
+                  <label class="form-check-label" for="EcofriendlyAspect">Very much</label>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="card mb-3">
+            <div class="card-body">
+                <label>3. Did you feel safe riding on a zero emission bus? <span style="color:red">*</span></label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Safety" id="Safety" value="Yes">
+                    <label class="form-check-label" for="Safety">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Safety" id="Safety" value="No">
+                    <label class="form-check-label" for="Safety">No</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Safety" id="Safety" value="Unsure">
+                    <label class="form-check-label" for="Safety">Unsure</label>
+                </div>
+            </div>
+          </div>
+
+
+          <div class="card mb-3">
+            <div class="card-body">
+                <label>4. How often do you travel using bus services?<span style="color:red">*</span></label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="OftenBusTravel" id="OftenBusTravel" value="Never">
+                    <label class="form-check-label" for="OftenBusTravel">Never</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="OftenBusTravel" id="OftenBusTravel" value="Occasionally">
+                    <label class="form-check-label" for="OftenBusTravel">Occasionally</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="OftenBusTravel" id="OftenBusTravel" value="Sometimes">
+                    <label class="form-check-label" for="OftenBusTravel">Sometimes</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="OftenBusTravel" id="OftenBusTravel" value="Often">
+                  <label class="form-check-label" for="OftenBusTravel">Often</label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="OftenBusTravel" id="OftenBusTravel" value="Always">
+                  <label class="form-check-label" for="OftenBusTravel">Always</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3">
+              <div class="card-body">
+                <label>5.What would make you consider using zero emission buses more frequently?<span style="color:red">*</span></label>
+                  <textarea class="form-control" name="FrequentZeroEmission" id="FrequentZeroEmission" rows="3"></textarea>
+              </div>
+          </div>
+
+          
+          <div class="card mb-3">
+            <div class="card-body">
+              <label>6.In what ways could zero emission buses be improved?<span style="color:red">*</span></label>
+                <textarea class="form-control" name="BusImproved" id="BusImproved" rows="3"></textarea>
+            </div>
+          </div>
+
+          <div class="card mb-3">
+            <div class="card-body">
+                <label>7. How likely are you to recommend zero emission buses to a friend or family member?<span style="color:red">*</span></label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="RecommendToFriend" id="RecommendToFriend" value="VeryUnlikely">
+                    <label class="form-check-label" for="RecommendToFriend">Very Unlikely</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="RecommendToFriend" id="RecommendToFriend" value="Unlikely">
+                    <label class="form-check-label" for="RecommendToFriend">Unlikely</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="RecommendToFriend" id="RecommendToFriend" value="Neutral">
+                    <label class="form-check-label" for="RecommendToFriend">Neutral</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="RecommendToFriend" id="RecommendToFriend" value="Likely">
+                  <label class="form-check-label" for="RecommendToFriend">Likely</label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="RecommendToFriend" id="RecommendToFriend" value="VeryLikely">
+                  <label class="form-check-label" for="RecommendToFriend">Very Likely</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3">
+            <div class="card-body">
+              <label>8.Is there any other feedback you would like to share about your experience today?</label>
+                <textarea class="form-control" name="OtherFeedback" id="OtherFeedback" rows="3"></textarea>
+            </div>
+          </div>
+          <!-- 提交按钮 -->
+          <div class="g-recaptcha" data-sitekey="6LeZJTIpAAAAAFl4GcjPFTCzv7TWshHxQUAL7Dbm"></div>
+          <br/>
+          <button type="submit" class="btn btn-primary" style="width: 150px;">Submit</button>
+      </form>
+    </div>
+  </section><!-- End About Us Section -->
+
+  <section id="testimonials" class="testimonials">
+    <div class="container" data-aos="fade-up">
+
+      <div class="slides-3 swiper" data-aos="fade-up" data-aos-delay="50">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+                <img src="../assets/images/Slider/Slider1.jpg" class="testimonial-img flex-shrink-0"  height="auto;" width="100%;" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <img src="../assets/images/Slider/Slider2.jpg" class="testimonial-img flex-shrink-0" height="auto;" width="100%;" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+                <img src="../assets/images/Slider/Slider3.jpg" class="testimonial-img flex-shrink-0" height="auto;" width="100%;" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+                <img src="../assets/images/Slider/Slider4.jpg" class="testimonial-img flex-shrink-0" height="auto;" width="100%;" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+                <img src="../assets/images/Slider/Slider5.jpg" class="testimonial-img flex-shrink-0" height="auto;" width="100%;" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+                <img src="../assets/images/Slider/Slider6.jpg" class="testimonial-img flex-shrink-0" height="auto;" width="100%;" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+                <img src="../assets/images/Slider/Slider7.jpg" class="testimonial-img flex-shrink-0" height="auto;" width="100%;" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+                <img src="../assets/images/Slider/Slider8.jpg" class="testimonial-img flex-shrink-0" height="auto;" width="100%;" alt="">
+            </div>
+          </div><!-- End testimonial item -->
+
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section><!-- End Testimonials Section -->
+
+
+
+
+  <%- include('../views/partials/foot'); %>
+  <script>
+     const form = document.querySelector('form');
+
+     form.addEventListener('submit', (e) =>{
+
+        const captchaResponse = grecaptcha.getResponse();
+
+
+        if(!captchaResponse.length > 0)
+        {
+          alert("Please pass the reCAPTCHA Validation");
+          e.preventDefault();
+          throw new Error("Captcha not complete");
+
+        }
+
+     });
+     
+  </script>
+  <%- include('../views/partials/footer'); %>

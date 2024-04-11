@@ -1,0 +1,139 @@
+
+<%- include('../views/partials/head'); %>
+
+<%- include('../views/partials/header'); %>
+  <!-- Hero Section -->
+
+  <!-- Hero Section -->
+  <section id="hero" class="page-hero">
+    <div class="container position-relative">
+      <div class="breadcrumb">
+        <ul>
+          <li><strong>You are here:</strong></li>
+          <li><a href="/">Home</a></li>
+          <li><i class="bi bi-chevron-double-right"></i></li>
+          <li>Contact</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- End Hero Section -->
+
+  <main id="main">
+
+    <!-- Start Contact Section -->
+    <div id="contact" class="contact-section section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Contact Us 24/7</h2>
+            <p>Get great idea, and ready to share with us, contact us</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-8 col-md-12" data-aos="fade-left">
+            <div class="contact-form-box contact-form contact-form-3">
+              <div class="form-container-box">
+                <form class="contact-form form" method="post" action="/send">
+                  <div class="controls">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group form-input-box">
+                          <input type="text" class="form-control" id="name" name="name" placeholder="Name*"
+                            required="required" data-error="Name is required.">
+                          <div class="help-block with-errors"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group form-input-box">
+                          <input type="email" class="form-control" id="email" name="email" placeholder="Email*"
+                            required="required" data-error="Valid email is required.">
+                          <div class="help-block with-errors"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group form-input-box">
+                          <input type="text" class="form-control" name="subject" placeholder="Subject"
+                            required="required">
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-group form-input-box">
+                          <textarea class="form-control" id="message" name="message" rows="7"
+                            placeholder="Write Your Message*" required="required"
+                            data-error="Please, leave us a message."></textarea>
+                          <div class="help-block with-errors"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <button type="submit" data-text="Send Message">Send Message</button>
+                      </div>
+                      <div class="messages">
+                        <div class="alert alert alert-success alert-dismissable alert-dismissable hidden"
+                          id="msgSubmit"><button type="button" class="close" data-dismiss="alert"
+                            aria-hidden="true">&times;</button> Thank You! your message has been sent. </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12" data-aos="fade-right">
+            <div class="contact-information-box-3">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="single-contact-info-box">
+                    <div class="contact-info">
+                      <h6>Address:</h6>
+                      <p>13-23 Investigator Drive</p>
+                      <p>Unanderra NSW 2526</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="single-contact-info-box">
+                    <div class="contact-info">
+                      <h6>Email:</h6>
+                      <p>enquiries@premierillawarra.com.au</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="single-contact-info-box">
+                    <div class="contact-info">
+                      <h6>Phone:</h6>
+                      <p>(02) 4271 1322</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Contact Section -->
+
+
+  <!-- Clients Section -->
+  <section id="clients" class="clients">
+    <div class="container" data-aos="zoom-out">
+
+      <div class="clients-slider swiper">
+        <div class="swiper-wrapper align-items-center">
+          <div class="swiper-slide"><img src="../assets/images/clients/client-1.png'" class="img-fluid" alt=""></div>
+          <div class="swiper-slide"><img src="../assets/images/clients/client-2.png'" class="img-fluid" alt=""></div>
+          <div class="swiper-slide"><img src="../assets/images/clients/client-3.png'" class="img-fluid" alt=""></div>
+          <div class="swiper-slide"><img src="../assets/images/clients/client-4.png'" class="img-fluid" alt=""></div>
+          <div class="swiper-slide"><img src="../assets/images/clients/client-5.png'" class="img-fluid" alt=""></div>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End Clients Section -->
+
+  </main><!-- End #main -->
+
+  <%- include('../views/partials/foot'); %>
+  <%- include('../views/partials/footer'); %>
